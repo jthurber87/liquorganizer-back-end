@@ -7,7 +7,7 @@ const app = express()
 const PORT = 9000
 const liquorganizer = require('./controllers/liquorganizer.js')
 require('./db/db')
-const whitelist = ["http://localhost:3000"];
+const whitelist = ["http://localhost:3000", "https://liquorganizer-back-end.herokuapp.com/"];
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) != -1 || !origin) {
