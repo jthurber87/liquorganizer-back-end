@@ -7,6 +7,7 @@ const app = express()
 const PORT = process.env.PORT || 9000
 const liquorganizer = require('./controllers/liquorganizer.js')
 require('./db/db')
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ `liquorganizer`
 const whitelist = ["http://localhost:3000", "https://liquorganizer-back-end.herokuapp.com/"];
 const corsOptions = {
   origin: function (origin, callback) {
