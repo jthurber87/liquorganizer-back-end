@@ -6,7 +6,6 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const PORT = process.env.PORT || 9000
-const DB_URL = process.env.DB_URL || 'mongodb://localhost/'+ `liquorganizer`
 const whitelist = ["http://localhost:3000"];
 const corsOptions = {
   origin: function (origin, callback) {
