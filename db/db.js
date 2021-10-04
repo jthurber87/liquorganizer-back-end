@@ -1,5 +1,5 @@
 // ../holiday-app-backend/db/db.js
-require('dotenv').config
+require('dotenv').config()
 const mongoose = require('mongoose')
 
 //Error/DC
