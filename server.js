@@ -1,13 +1,12 @@
 //dep
-require('dotenv').config()
+require('dotenv').config
 require('./db/db')
 const express = require('express')
-const cors = require('cors')
 const app = express()
+const cors = require('cors')
 const PORT = process.env.PORT || 9000
-const liquorganizer = require('./controllers/liquorganizer.js')
-require('./db/db')
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ `bottles`
+const liquorganizer = require('./controllers/liquorganizer.js')
 const whitelist = ["http://localhost:3000"];
 const corsOptions = {
   origin: function (origin, callback) {

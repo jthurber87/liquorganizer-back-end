@@ -7,7 +7,7 @@ mongoose.connection.on('error', err => console.log(err.message + ' is Mongod not
 mongoose.connection.on('disconnected', () => console.log('mongo disconnected'))
 
 
-mongoose.connect('mongodb://localhost:27017/bottles', {
+mongoose.connect('mongodb://localhost:27017/liquorganizer', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
