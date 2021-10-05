@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Bottle = require('../models/bottle.js')
 
-//INDEX
+
 router.get('/', async (req, res) => {
   try {
     const foundBottles = await Bottle.find();
@@ -13,7 +13,17 @@ router.get('/', async (req, res) => {
 })
 
 
-//CREATE
+router.get('/:id', async (req, res) => {
+  try {
+    const foundBottles = await Bottle.findById(req.params.id);
+    res.status(200).json(foundBottles)
+  } catch(err) {
+    res.status(400).json({ error: err.message })
+  }
+})
+
+
+
 router.post('/', async (req, res) => {
   try {
     const newBottle = await Bottle.create(req.body);
@@ -25,7 +35,7 @@ router.post('/', async (req, res) => {
   }
 })
 
-//DELETE
+
 router.delete('/:id', async (req, res) => {
   try {
     const deletedBottle = await Bottle.findByIdAndRemove(req.params.id);
@@ -35,7 +45,6 @@ router.delete('/:id', async (req, res) => {
   }
 })
 
-//UPDATE
 router.put('/:id', async (req, res) => {
   try {
     const updatedBottle = await Bottle.findByIdAndUpdate(req.params.id, req.body, { new: true })
