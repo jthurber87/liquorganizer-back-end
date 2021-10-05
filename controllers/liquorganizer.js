@@ -12,15 +12,6 @@ router.get('/', async (req, res) => {
   }
 })
 
-//SHOW
-router.get('/:id', async (req, res) => {
-  try {
-    const foundBottles = await Bottle.findById(req.params.id);
-    res.status(200).json(foundBottles)
-  } catch(err) {
-    res.status(400).json({ error: err.message })
-  }
-})
 
 //CREATE
 router.post('/', async (req, res) => {
