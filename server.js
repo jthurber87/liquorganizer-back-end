@@ -7,9 +7,9 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const PORT = process.env.PORT || 9000
-const whitelist = ["http://localhost:3000", "https://liquorganizer-ga.surge.sh/"];
+const whitelist = ["http://localhost:3000", "https://liquorganizer-ga.surge.sh/", "https://liquorganizer-back-end.herokuapp.com/"];
 const corsOptions = {
-  origin: function (origin, callback) {
+  origin: function(origin, callback) {
     if (whitelist.indexOf(origin) != -1 || !origin) {
       callback(null, true)
     } else {
