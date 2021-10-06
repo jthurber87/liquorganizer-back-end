@@ -47,7 +47,7 @@ const login = async (req, res) => {
 // LOGOUT
 // GET - ('/auth/logout')
 const logout = async (req, res) => {
-  res.send("Post logout")
+  res.send("Post logout!!!!!")
 }
 
 router.post('/register', register)
