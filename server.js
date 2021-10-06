@@ -2,6 +2,7 @@
 require('dotenv').config()
 require('./db/db')
 const liquorganizer = require('./controllers/liquorganizer.js')
+const authController = require('./controllers/auth.js')
 const express = require('express')
 const app = express()
 const cors = require('cors')
@@ -21,6 +22,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/bottles', liquorganizer)
+app.use('/auth', authController)
 
 
 app.listen(PORT, () => {
